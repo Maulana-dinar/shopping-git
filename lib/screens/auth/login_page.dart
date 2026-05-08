@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'register_page.dart';
+import 'package:furniturapp/home.dart';
+import 'package:furniturapp/screens/auth/register_page.dart';
+
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -32,7 +34,7 @@ class LoginPage extends StatelessWidget {
                    radius: 35,
                    backgroundColor: Colors.white,
                    backgroundImage: AssetImage(
-                   'images/login.png',
+                   'assets/images/pattern.png',
                    ),
                    ),
 
@@ -134,8 +136,12 @@ class LoginPage extends StatelessWidget {
                         ),
 
                         onPressed: () {
-
-                          // pindah ke home page nanti
+                         Navigator.push(
+                          context,
+                         MaterialPageRoute(
+                         builder: (context) => const HomeScreen(),
+                       ),
+                     );
                         },
 
                         child: const Text(
