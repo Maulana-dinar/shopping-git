@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:furniturapp/screens/auth/login_page.dart';
+
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -15,7 +17,7 @@ class RegisterPage extends StatelessWidget {
 
               const SizedBox(height: 30),
 
-              // Logo
+              // LOGO
               Row(
                 children: [
 
@@ -27,13 +29,13 @@ class RegisterPage extends StatelessWidget {
                     ),
                   ),
 
-                  CircleAvatar(
-                   radius: 35,
-                   backgroundColor: Colors.white,
-                   backgroundImage: AssetImage(
-                   'images/login.png',
-                   ),
-                   ),
+                  const CircleAvatar(
+                    radius: 35,
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage(
+                      'assets/images/pattern.png',
+                    ),
+                  ),
 
                   const Expanded(
                     child: Divider(
@@ -47,8 +49,10 @@ class RegisterPage extends StatelessWidget {
 
               const SizedBox(height: 50),
 
+              // TITLE
               const Text(
                 "WELCOME",
+
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -57,84 +61,118 @@ class RegisterPage extends StatelessWidget {
 
               const SizedBox(height: 40),
 
+              // FORM CONTAINER
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 24),
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                ),
+
                 padding: const EdgeInsets.all(24),
+
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  boxShadow: [
+
+                  borderRadius: BorderRadius.circular(20),
+
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 10,
                       color: Colors.black12,
-                    )
+                    ),
                   ],
                 ),
 
                 child: Column(
                   children: [
 
-                    // Name
+                    // NAME
                     TextField(
                       decoration: InputDecoration(
                         labelText: "Name",
+
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius:
+                              BorderRadius.circular(8),
                         ),
-                        suffixIcon: Icon(Icons.keyboard_arrow_down),
+
+                        suffixIcon: const Icon(
+                          Icons.person_outline,
+                        ),
                       ),
                     ),
 
                     const SizedBox(height: 20),
 
-                    // Email
+                    // EMAIL
                     TextField(
                       decoration: InputDecoration(
                         labelText: "Email",
+
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius:
+                              BorderRadius.circular(8),
+                        ),
+
+                        suffixIcon: const Icon(
+                          Icons.email_outlined,
                         ),
                       ),
                     ),
 
                     const SizedBox(height: 20),
 
-                    // Password
+                    // PASSWORD
                     TextField(
                       obscureText: true,
+
                       decoration: InputDecoration(
                         labelText: "Password",
+
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius:
+                              BorderRadius.circular(8),
                         ),
-                        suffixIcon: Icon(Icons.remove_red_eye_outlined),
+
+                        suffixIcon: const Icon(
+                          Icons.remove_red_eye_outlined,
+                        ),
                       ),
                     ),
 
                     const SizedBox(height: 20),
 
-                    // Confirm Password
+                    // CONFIRM PASSWORD
                     TextField(
                       obscureText: true,
+
                       decoration: InputDecoration(
                         labelText: "Confirm password",
+
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius:
+                              BorderRadius.circular(8),
                         ),
-                        suffixIcon: Icon(Icons.remove_red_eye_outlined),
+
+                        suffixIcon: const Icon(
+                          Icons.remove_red_eye_outlined,
+                        ),
                       ),
                     ),
 
                     const SizedBox(height: 35),
 
-                    // Sign Up Button
+                    // SIGN UP BUTTON
                     SizedBox(
                       width: double.infinity,
                       height: 60,
+
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black87,
+
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius:
+                                BorderRadius.circular(10),
                           ),
                         ),
 
@@ -142,6 +180,7 @@ class RegisterPage extends StatelessWidget {
 
                         child: const Text(
                           "Sign up",
+
                           style: TextStyle(
                             fontSize: 24,
                             color: Colors.white,
@@ -152,21 +191,42 @@ class RegisterPage extends StatelessWidget {
 
                     const SizedBox(height: 25),
 
+                    // SIGN IN
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      mainAxisAlignment:
+                          MainAxisAlignment.center,
 
-                        Text(
+                      children: [
+
+                        const Text(
                           "Already have account? ",
+
                           style: TextStyle(
                             color: Colors.grey,
                           ),
                         ),
 
-                        Text(
-                          "Sign in",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                        GestureDetector(
+
+                          onTap: () {
+
+                            Navigator.push(
+                              context,
+
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const LoginPage(),
+                              ),
+                            );
+                          },
+
+                          child: const Text(
+                            "Sign in",
+
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ],
